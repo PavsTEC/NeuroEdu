@@ -1,0 +1,57 @@
+/* App.css */
+
+/* Reset básico para eliminar márgenes y usar border-box */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Fuente predeterminada */
+  background-color: #f9f9f9; /* Fondo claro */
+  color: #333; /* Color de texto básico */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Asegura que las imágenes no desborden su contenedor */
+}
+
+a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: inherit; /* Hace que los enlaces hereden el color del texto */
+}
+
+ul,
+ol {
+  list-style: none; /* Elimina el estilo predeterminado de las listas */
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer; /* Muestra un cursor pointer al pasar sobre los botones */
+  border: none; /* Elimina los bordes predeterminados */
+  background: none; /* Elimina el fondo predeterminado */
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Asegura que la tipografía sea consistente */
+}
+
+
+html {
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
