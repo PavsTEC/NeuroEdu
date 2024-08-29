@@ -8,8 +8,9 @@ import {
 import App from "./App.jsx";
 import "./index.css";
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
-import SolicitantePage from "./pages/SolicitantePage/SolicitantePage.jsx";
+import SolicitantePage from "./pages/SolicitantePage.jsx";
 import EmpresaPage from "./pages/EmpresaPage/EmpresaPage.jsx";
+import EmpleosPage from "./pages/EmpleosPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<LoginPage />} />
       <Route path="/solicitante" element={<SolicitantePage />} />
       <Route path="/empresa" element={<EmpresaPage />} />
+      <Route path="/empleos" element={<EmpleosPage />} />
     </Route>
   )
 );
