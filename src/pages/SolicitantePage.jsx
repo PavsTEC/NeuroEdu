@@ -23,6 +23,7 @@ import {
   Check,
   X,
 } from "lucide-react";
+import NavBarSolicitante from "@/components/NavBarSolicitante";
 
 const EditableSection = ({
   title,
@@ -85,7 +86,6 @@ const EditableSection = ({
 };
 
 export default function Component() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [aboutMe, setAboutMe] = useState(
     "I'm a software developer with 5 years of experience. I'm passionate about creating accessible and user-friendly applications. As an individual on the autism spectrum, I bring a unique perspective to problem-solving and attention to detail."
   );
@@ -135,21 +135,10 @@ export default function Component() {
   const [editingEducation, setEditingEducation] = useState(false);
   const [editingInterests, setEditingInterests] = useState(false);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
-    <div
-      className={`min-h-screen p-8 ${
-        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
-      }`}
-    >
-      <Card
-        className={`max-w-4xl mx-auto ${
-          isDarkMode ? "bg-gray-800" : "bg-white"
-        }`}
-      >
+    <div className="mx-auto pt-16">
+      <NavBarSolicitante />
+      <Card className={`max-w-4xl mx-auto`}>
         <CardHeader className="flex flex-col sm:flex-row items-center gap-4">
           <Avatar className="w-32 h-32">
             <AvatarImage
@@ -163,10 +152,6 @@ export default function Component() {
             <CardDescription className="text-xl">
               Software Developer | Autism Advocate
             </CardDescription>
-          </div>
-          <div className="sm:ml-auto flex items-center gap-2">
-            <span>Color Mode</span>
-            <Switch checked={isDarkMode} onCheckedChange={toggleDarkMode} />
           </div>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -270,12 +255,7 @@ export default function Component() {
             </div>
             {!editingExperiences &&
               experiences.map((exp, index) => (
-                <Card
-                  key={index}
-                  className={`mb-4 ${
-                    isDarkMode ? "bg-gray-700" : "bg-gray-50"
-                  }`}
-                >
+                <Card key={index} className={`mb-4`}>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Briefcase className="w-5 h-5" />
@@ -326,7 +306,7 @@ export default function Component() {
               </Button>
             </div>
             {!editingEducation && (
-              <Card className={`${isDarkMode ? "bg-gray-700" : "bg-gray-50"}`}>
+              <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <GraduationCap className="w-5 h-5" />

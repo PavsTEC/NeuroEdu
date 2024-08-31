@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import NavBarSolicitante from "@/components/NavBarSolicitante/NavBarSolicitante";
+import NavBarSolicitante from "@/components/NavBarSolicitante";
 
 export default function EmpleosPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -123,12 +123,12 @@ export default function EmpleosPage() {
       <div className="flex items-center mb-6">
         <div className="relative flex-1">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <SearchIcon className="h-5 w-5 text-gray-400" />
+            <SearchIcon className="h-5 w-5" />
           </div>
           <Input
             type="text"
             placeholder="Buscar ofertas..."
-            className="pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full"
+            className="pl-10 pr-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full"
             value={searchTerm}
             onChange={handleSearch}
           />
@@ -176,9 +176,9 @@ export default function EmpleosPage() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredJobs.map((job) => (
-          <Card key={job.id} className="p-6 bg-white rounded-md shadow-md">
+          <Card key={job.id} className="p-6 rounded-md shadow-md">
             <h2 className="text-xl font-bold mb-2">{job.title}</h2>
-            <p className="text-gray-600 mb-4">{job.description}</p>
+            <p className=" mb-4">{job.description}</p>
             <div className="mb-4">
               <h3 className="text-lg font-medium mb-2">Requisitos:</h3>
               <ul className="list-disc pl-4">
@@ -195,12 +195,9 @@ export default function EmpleosPage() {
                 <MapPinIcon className="h-5 w-5 inline-block mr-1" />
                 {job.location}
               </div>
-              <Link
-                to="#"
-                className="inline-flex items-center justify-center h-10 px-6 rounded-md bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              >
+              <Button className="inline-flex items-center justify-center h-10 px-6 rounded-md">
                 Aplicar
-              </Link>
+              </Button>
             </div>
           </Card>
         ))}
