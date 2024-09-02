@@ -74,11 +74,11 @@ const EditableSection = ({
       <div className="flex justify-end space-x-2">
         <Button type="button" variant="outline" onClick={handleCancel}>
           <X className="w-4 h-4 mr-2" />
-          Cancel
+          Cancelar
         </Button>
         <Button type="submit">
           <Check className="w-4 h-4 mr-2" />
-          Save
+          Guardar
         </Button>
       </div>
     </form>
@@ -87,44 +87,44 @@ const EditableSection = ({
 
 export default function Component() {
   const [aboutMe, setAboutMe] = useState(
-    "I'm a software developer with 5 years of experience. I'm passionate about creating accessible and user-friendly applications. As an individual on the autism spectrum, I bring a unique perspective to problem-solving and attention to detail."
+    "Soy un desarrollador de software con 5 años de experiencia. Me apasiona crear aplicaciones accesibles y fáciles de usar. Como individuo en el espectro autista, aporto una perspectiva única a la resolución de problemas y atención al detalle."
   );
   const [communicationPreferences, setCommunicationPreferences] = useState([
-    "Prefer written communication over phone calls",
-    "Please be direct and specific in instructions",
-    "I may need extra time to process complex social situations",
+    "Prefiero comunicación escrita sobre llamadas telefónicas",
+    "Por favor sé directo y específico con las instrucciones",
+    "Podría necesitar tiempo extra para resolver situaciones sociales complejas",
   ]);
   const [skills, setSkills] = useState([
     "JavaScript",
     "React",
     "Node.js",
-    "Accessibility",
-    "Problem Solving",
-    "Data Analysis",
+    "Accesibilidad",
+    "Resolución de problemas",
+    "Análisis de datos",
   ]);
   const [experiences, setExperiences] = useState([
     {
-      title: "Senior Developer at TechCorp",
-      period: "2018 - Present",
+      title: "Desarrollador Senior en TechCorp",
+      period: "2018 - Presente",
       description:
-        "Leading accessibility initiatives and developing robust web applications.",
+        "Liderando iniciativas de accesibilidad y desarrollando aplicaciones web robustas.",
     },
     {
-      title: "Junior Developer at StartUp Inc",
+      title: "Desarrollador Junior en StartUp Inc",
       period: "2016 - 2018",
       description:
-        "Worked on various frontend projects and improved my coding skills.",
+        "Trabajé en varios proyectos frontend y mejoré mis habilidades de codificación.",
     },
   ]);
   const [education, setEducation] = useState({
-    degree: "BS in Computer Science",
-    school: "University of Technology",
+    degree: "Licenciatura en Ciencias de la Computación",
+    school: "Universidad de Tecnología",
     year: "2016",
   });
   const [interests, setInterests] = useState([
-    "Reading Sci-Fi",
-    "Autism Support Groups",
-    "Tech Meetups",
+    "Leer ciencia ficción",
+    "Grupos de apoyo para autismo",
+    "Encuentros tecnológicos",
   ]);
 
   const [editingAboutMe, setEditingAboutMe] = useState(false);
@@ -143,33 +143,33 @@ export default function Component() {
           <Avatar className="w-32 h-32">
             <AvatarImage
               src="/placeholder.svg?height=128&width=128"
-              alt="Profile picture"
+              alt="Foto de perfil"
             />
             <AvatarFallback>JD</AvatarFallback>
           </Avatar>
           <div className="text-center sm:text-left">
             <CardTitle className="text-3xl">Jane Doe</CardTitle>
             <CardDescription className="text-xl">
-              Software Developer | Autism Advocate
+              Desarrolladora de Software | Defensora del Autismo
             </CardDescription>
           </div>
         </CardHeader>
         <CardContent className="space-y-6">
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">About Me</h2>
+              <h2 className="text-2xl font-semibold">Sobre mí</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingAboutMe(!editingAboutMe)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingAboutMe && <p>{aboutMe}</p>}
             <EditableSection
-              title="About Me"
+              title="Sobre mí"
               content={aboutMe}
               onSave={setAboutMe}
               isEditing={editingAboutMe}
@@ -180,7 +180,7 @@ export default function Component() {
           <section>
             <div className="flex justify-between items-center mb-2">
               <h2 className="text-2xl font-semibold">
-                Communication Preferences
+                Preferencias de comunicación
               </h2>
               <Button
                 variant="ghost"
@@ -192,7 +192,7 @@ export default function Component() {
                 }
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingCommunicationPreferences && (
@@ -203,7 +203,7 @@ export default function Component() {
               </ul>
             )}
             <EditableSection
-              title="Communication Preferences"
+              title="Preferencias de comunicación"
               content={communicationPreferences}
               onSave={setCommunicationPreferences}
               isEditing={editingCommunicationPreferences}
@@ -215,14 +215,14 @@ export default function Component() {
 
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">Skills</h2>
+              <h2 className="text-2xl font-semibold">Habilidades</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingSkills(!editingSkills)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingSkills && (
@@ -233,7 +233,7 @@ export default function Component() {
               </div>
             )}
             <EditableSection
-              title="Skills"
+              title="Habilidades"
               content={skills}
               onSave={setSkills}
               isEditing={editingSkills}
@@ -243,14 +243,14 @@ export default function Component() {
 
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">Experience</h2>
+              <h2 className="text-2xl font-semibold">Experiencia</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingExperiences(!editingExperiences)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingExperiences &&
@@ -269,7 +269,7 @@ export default function Component() {
                 </Card>
               ))}
             <EditableSection
-              title="Experience"
+              title="Experiencia"
               content={experiences.map(
                 (exp) => `${exp.title} (${exp.period}): ${exp.description}`
               )}
@@ -295,14 +295,14 @@ export default function Component() {
 
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">Education</h2>
+              <h2 className="text-2xl font-semibold">Educación</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingEducation(!editingEducation)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingEducation && (
@@ -319,7 +319,7 @@ export default function Component() {
               </Card>
             )}
             <EditableSection
-              title="Education"
+              title="Educación"
               content={`${education.degree}, ${education.school}, ${education.year}`}
               onSave={(newEducation) => {
                 const [degree, school, year] = newEducation.split(", ");
@@ -332,14 +332,14 @@ export default function Component() {
 
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">Interests</h2>
+              <h2 className="text-2xl font-semibold">Intereses</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingInterests(!editingInterests)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingInterests && (
@@ -355,7 +355,7 @@ export default function Component() {
               </div>
             )}
             <EditableSection
-              title="Interests"
+              title="Intereses"
               content={interests}
               onSave={setInterests}
               isEditing={editingInterests}
@@ -366,7 +366,7 @@ export default function Component() {
           <Separator />
 
           <div className="flex justify-center">
-            <Button className="w-full sm:w-auto">Connect with Jane</Button>
+            <Button className="w-full sm:w-auto">Conectar con Jane</Button>
           </div>
         </CardContent>
       </Card>

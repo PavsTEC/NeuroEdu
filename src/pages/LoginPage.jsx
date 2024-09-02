@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "../assets/letra_n.png"; // Adjust the path as needed
+import logo from "../assets/neuroedu_sin_limites.png";
 import { Link } from "react-router-dom";
 
 export default function LoginPage() {
@@ -33,7 +33,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow flex flex-col items-center justify-center p-4">
-        <img src={logo} alt="NeuroEdu Logo" className="w-32 h-32 mb-8" />
+        <img src={logo} alt="NeuroEdu Logo" className=" h-32 mb-8" />
 
         <h1 className="text-4xl font-bold text-center mb-4">
           Bienvenido a NeuroEdu

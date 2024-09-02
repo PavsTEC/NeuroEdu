@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -26,13 +25,7 @@ import {
 } from "lucide-react";
 import NavBarEmpresa from "@/components/NavBarEmpresa";
 
-const EditableSection = ({
-  title,
-  content,
-  onSave,
-  isEditing,
-  setIsEditing,
-}) => {
+const EditableSection = ({ content, onSave, isEditing, setIsEditing }) => {
   const [editedContent, setEditedContent] = useState(content);
 
   const handleSubmit = (e) => {
@@ -75,11 +68,11 @@ const EditableSection = ({
       <div className="flex justify-end space-x-2">
         <Button type="button" variant="outline" onClick={handleCancel}>
           <X className="w-4 h-4 mr-2" />
-          Cancel
+          Cancelar
         </Button>
         <Button type="submit">
           <Check className="w-4 h-4 mr-2" />
-          Save
+          Guardar
         </Button>
       </div>
     </form>
@@ -89,47 +82,47 @@ const EditableSection = ({
 export default function EmpresaPage() {
   const [companyInfo, setCompanyInfo] = useState({
     name: "TechInnovate Solutions",
-    tagline: "Empowering Businesses Through Innovative Technology",
+    tagline: "Empoderando Empresas a través de Tecnología Innovadora",
     founded: "2010",
     employees: "250+",
     location: "San Francisco, CA",
   });
   const [aboutUs, setAboutUs] = useState(
-    "TechInnovate Solutions is a leading technology company dedicated to creating cutting-edge software solutions for businesses of all sizes. With a focus on innovation and user-centric design, we help our clients stay ahead in the digital landscape."
+    "TechInnovate Solutions es una empresa líder en tecnología dedicada a crear soluciones de software de vanguardia para empresas de todos los tamaños. Con un enfoque en la innovación y el diseño centrado en el usuario, ayudamos a nuestros clientes a mantenerse a la vanguardia en el panorama digital."
   );
   const [mission, setMission] = useState(
-    "Our mission is to empower businesses with transformative technology solutions that drive growth, efficiency, and innovation in an ever-evolving digital world."
+    "Nuestra misión es empoderar a las empresas con soluciones tecnológicas transformadoras que impulsen el crecimiento, la eficiencia y la innovación en un mundo digital en constante evolución."
   );
   const [services, setServices] = useState([
-    "Custom Software Development",
-    "Cloud Solutions",
-    "AI and Machine Learning Integration",
-    "Cybersecurity Services",
-    "Digital Transformation Consulting",
+    "Desarrollo de Software Personalizado",
+    "Soluciones en la Nube",
+    "Integración de IA y Aprendizaje Automático",
+    "Servicios de Ciberseguridad",
+    "Consultoría en Transformación Digital",
   ]);
   const [projects, setProjects] = useState([
     {
-      name: "SmartCity Initiative",
+      name: "Iniciativa Ciudad Inteligente",
       description:
-        "Developed an IoT-based smart city management system for improved urban living.",
+        "Desarrollamos un sistema de gestión urbana basado en IoT para mejorar la vida en la ciudad.",
     },
     {
-      name: "FinTech Revolution",
+      name: "Revolución FinTech",
       description:
-        "Created a blockchain-based financial platform for secure and transparent transactions.",
+        "Creamos una plataforma financiera basada en blockchain para transacciones seguras y transparentes.",
     },
     {
-      name: "HealthTech Innovation",
+      name: "Innovación en Salud",
       description:
-        "Launched an AI-powered health monitoring app for personalized patient care.",
+        "Lanzamos una aplicación de monitoreo de salud impulsada por IA para atención personalizada del paciente.",
     },
   ]);
   const [team, setTeam] = useState([
-    "Dr. Emily Chen - CEO & Founder",
-    "Michael Rodriguez - CTO",
-    "Sarah Johnson - Head of Innovation",
-    "David Lee - Lead Software Architect",
-    "Lisa Wong - Director of Client Relations",
+    "Dra. Emily Chen - CEO y Fundadora",
+    "Michael Rodríguez - CTO",
+    "Sarah Johnson - Jefa de Innovación",
+    "David Lee - Arquitecto de Software Líder",
+    "Lisa Wong - Directora de Relaciones con Clientes",
   ]);
 
   const [editingAboutUs, setEditingAboutUs] = useState(false);
@@ -146,7 +139,7 @@ export default function EmpresaPage() {
           <Avatar className="w-32 h-32">
             <AvatarImage
               src="/placeholder.svg?height=128&width=128"
-              alt="Company logo"
+              alt="Logo de la empresa"
             />
             <AvatarFallback>TS</AvatarFallback>
           </Avatar>
@@ -157,11 +150,11 @@ export default function EmpresaPage() {
             </CardDescription>
             <div className="mt-2 flex flex-wrap gap-2">
               <Badge>
-                <Building2 className="w-4 h-4 mr-1" /> Founded:{" "}
+                <Building2 className="w-4 h-4 mr-1" /> Fundada:{" "}
                 {companyInfo.founded}
               </Badge>
               <Badge>
-                <Users className="w-4 h-4 mr-1" /> Employees:{" "}
+                <Users className="w-4 h-4 mr-1" /> Empleados:{" "}
                 {companyInfo.employees}
               </Badge>
               <Badge>
@@ -173,19 +166,18 @@ export default function EmpresaPage() {
         <CardContent className="space-y-6">
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">About Us</h2>
+              <h2 className="text-2xl font-semibold">Sobre Nosotros</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingAboutUs(!editingAboutUs)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingAboutUs && <p>{aboutUs}</p>}
             <EditableSection
-              title="About Us"
               content={aboutUs}
               onSave={setAboutUs}
               isEditing={editingAboutUs}
@@ -195,14 +187,14 @@ export default function EmpresaPage() {
 
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">Our Mission</h2>
+              <h2 className="text-2xl font-semibold">Nuestra Misión</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingMission(!editingMission)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingMission && (
@@ -212,7 +204,6 @@ export default function EmpresaPage() {
               </div>
             )}
             <EditableSection
-              title="Our Mission"
               content={mission}
               onSave={setMission}
               isEditing={editingMission}
@@ -224,14 +215,14 @@ export default function EmpresaPage() {
 
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">Our Services</h2>
+              <h2 className="text-2xl font-semibold">Nuestros Servicios</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingServices(!editingServices)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingServices && (
@@ -245,7 +236,6 @@ export default function EmpresaPage() {
               </div>
             )}
             <EditableSection
-              title="Our Services"
               content={services}
               onSave={setServices}
               isEditing={editingServices}
@@ -255,14 +245,14 @@ export default function EmpresaPage() {
 
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">Featured Projects</h2>
+              <h2 className="text-2xl font-semibold">Proyectos Destacados</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingProjects(!editingProjects)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingProjects &&
@@ -280,7 +270,6 @@ export default function EmpresaPage() {
                 </Card>
               ))}
             <EditableSection
-              title="Featured Projects"
               content={projects.map(
                 (project) => `${project.name}: ${project.description}`
               )}
@@ -301,14 +290,14 @@ export default function EmpresaPage() {
 
           <section>
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold">Our Team</h2>
+              <h2 className="text-2xl font-semibold">Nuestro Equipo</h2>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setEditingTeam(!editingTeam)}
               >
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit
+                Editar
               </Button>
             </div>
             {!editingTeam && (
@@ -319,7 +308,6 @@ export default function EmpresaPage() {
               </ul>
             )}
             <EditableSection
-              title="Our Team"
               content={team}
               onSave={setTeam}
               isEditing={editingTeam}
@@ -330,7 +318,7 @@ export default function EmpresaPage() {
           <Separator />
 
           <div className="flex justify-center">
-            <Button className="w-full sm:w-auto">Contact Us</Button>
+            <Button className="w-full sm:w-auto">Contáctanos</Button>
           </div>
         </CardContent>
       </Card>

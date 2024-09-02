@@ -11,36 +11,35 @@ import NavBarNeurotipico from "@/components/NavBarNeurotipico";
 
 const teamMembers = [
   {
-    name: "Ana García",
-    role: "Desarrolladora Full Stack",
+    name: "Santiago Jiménez",
+    role: "Ingeniero químico y biotecnólogo",
     description:
-      "Ana es una apasionada desarrolladora con experiencia en React y Node.js. Su enfoque en la accesibilidad web la llevó a unirse a NeuroEdu.",
-    image: "/placeholder.svg?height=200&width=200",
-    initials: "AG",
+      "Apasionado por las ciencias, las matemáticas y su enseñanza. Constantemente buscando formas de mejorar mis habilidades y conocimientos en mi campo de estudio. Promotor del bienestar estudiantil.",
+    image: "/santiago.jpeg",
+    initials: "SJ",
   },
   {
-    name: "Carlos Rodríguez",
-    role: "Diseñador UX/UI",
+    name: "Pablo Venegas",
+    role: "Desarrollador de Software",
     description:
-      "Carlos combina su formación en psicología con sus habilidades de diseño para crear interfaces intuitivas y accesibles para usuarios neurodivergentes.",
-    image: "/placeholder.svg?height=200&width=200",
-    initials: "CR",
+      "Entusiasta de crear soluciones que mejoren la vida de las personas, transformando lo complicado en algo fácil.",
+    image: "/pablo.jpeg",
+    initials: "PV",
   },
   {
-    name: "Laura Martínez",
-    role: "Especialista en Neurodiversidad",
+    name: "Dayana Araya",
+    role: "Adminisradora de Empresas",
     description:
-      "Con un doctorado en neurociencias, Laura aporta un profundo conocimiento sobre las necesidades de las personas neurodivergentes en el ámbito laboral.",
-    image: "/placeholder.svg?height=200&width=200",
-    initials: "LM",
+      "Dayana es una estudiante interesada en apreder y conocer sobre el mundo empresarial, economía global y las problemáticas sociales.",
+    image: "/dayana.jpeg",
+    initials: "DA",
   },
   {
-    name: "Miguel Sánchez",
-    role: "Gerente de Proyectos",
-    description:
-      "Miguel tiene una amplia experiencia en gestión de proyectos tecnológicos y un fuerte compromiso con la inclusión en el lugar de trabajo.",
+    name: "Gerald Guillén",
+    role: "Administrador de Empresas",
+    description: "Gerald es un talentoso estudiante aficionado al café.",
     image: "/placeholder.svg?height=200&width=200",
-    initials: "MS",
+    initials: "GG",
   },
 ];
 
@@ -53,15 +52,14 @@ export default function AboutUsPage() {
       <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
         En NeuroEdu, nos dedicamos a crear puentes entre el talento
         neurodivergente y las empresas inclusivas. Nuestro equipo diverso
-        combina experiencia en tecnología, diseño, neurociencias y gestión de
-        proyectos para ofrecer soluciones innovadoras que fomenten la inclusión
-        laboral.
+        combina experiencia en tecnología, ciencia y gestión de proyectos para
+        ofrecer soluciones innovadoras que fomenten la inclusión laboral.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {teamMembers.map((member, index) => (
           <Card key={index} className="flex flex-col items-center text-center">
-            <CardHeader>
+            <CardHeader className="flex flex-col items-center text-center">
               <Avatar className="w-32 h-32 mb-4">
                 <AvatarImage src={member.image} alt={member.name} />
                 <AvatarFallback>{member.initials}</AvatarFallback>
